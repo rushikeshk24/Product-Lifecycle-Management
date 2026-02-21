@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 min-h-screen antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  a {
+    @apply text-indigo-400 hover:text-indigo-300 transition-colors;
+  }
+  input, textarea, button, select {
+    font: inherit;
+    color: inherit;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  @apply w-6 h-6 border-2 border-zinc-600 border-t-indigo-500 rounded-full;
+  animation: spin 0.7s linear infinite;
+}
