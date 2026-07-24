@@ -1,108 +1,69 @@
-# Product Lifecycle Management (PLM)
+🚀 Product Lifecycle Management (PLM)
 
-Full-stack MERN application for managing product lifecycles: Design → Development → Testing → Released.
+A full-stack MERN (MongoDB, Express.js, React, Node.js) application designed to streamline the complete product development lifecycle—from initial design through development, testing, and final release. The platform provides secure role-based access, product version control, lifecycle tracking, and comprehensive activity logging for improved collaboration and traceability.
 
-## Tech Stack
+🌐 Live Demo
 
-- **Backend:** Node.js, Express, MongoDB (Mongoose), JWT
-- **Frontend:** React (Vite), React Router
-- **Auth:** JWT-based (Admin, Developer, Tester roles)
+Application:
+https://product-lifecycle-management-frontend.onrender.com
 
-## Features
+📌 Overview
 
-- **User authentication** – Register, login, role-based access (Admin, Developer, Tester)
-- **Product management** – Create, update, view, delete (Admin/Developer)
-- **Lifecycle stages** – Design → Development → Testing → Released
-- **Version control** – Semver versions and history per product
-- **Activity logs** – Track actions (login, product create/update/stage/version/delete); Admin can view all logs
+The Product Lifecycle Management (PLM) system enables organizations to efficiently manage products throughout their entire lifecycle. It provides centralized product information, version history, workflow management, and role-based collaboration between administrators, developers, and testers.
 
-## Project Structure
+✨ Key Features
+🔐 Secure Authentication & Authorization
+JWT-based authentication
+Role-based access control
+Secure user registration and login
+Protected API endpoints
+📦 Product Management
+Create, update, view, and delete products
+Manage complete product information
+Search, filter, and paginate product records
+Product ownership and lifecycle tracking
+🔄 Lifecycle Management
 
-```
-├── backend/
-│   ├── src/
-│   │   ├── config/       # DB connection
-│   │   ├── controllers/  # Auth, products, activity logs
-│   │   ├── middleware/   # Auth, roles, error handler, activity logger
-│   │   ├── models/       # User, Product, ActivityLog
-│   │   ├── routes/       # API routes + validation
-│   │   └── server.js
-│   ├── .env.example
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/   # Layout, sidebar, header
-│   │   ├── context/      # AuthContext
-│   │   ├── pages/        # Login, Register, Dashboard, Products, etc.
-│   │   ├── services/     # API client (axios)
-│   │   ├── styles/       # Global CSS
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── .env.example
-│   ├── index.html
-│   ├── vite.config.js
-│   └── package.json
-└── README.md
-```
+Track products through predefined stages:
 
-## Setup
+Design
+Development
+Testing
+Released
+📝 Version Control
+Semantic versioning (SemVer)
+Complete version history
+Product revision tracking
+Release management
+📊 Activity Logging
 
-### Prerequisites
+Automatically records important system activities including:
 
-- Node.js 18+
-- MongoDB (local or Atlas)
+User login
+Product creation
+Product updates
+Stage transitions
+Version updates
+Product deletion
 
-### Backend
+Administrators can review complete audit logs for accountability and traceability.
 
-```bash
-cd backend
-cp .env.example .env
-# Edit .env: set MONGODB_URI, JWT_SECRET, CLIENT_URL
-npm install
-npm run dev
-```
-
-Server runs at `http://localhost:5000`. Health: `GET /health`. API base: `/api`.
-
-### Frontend
-
-```bash
-cd frontend
-cp .env.example .env
-# Optional: set VITE_API_URL if API is not at same origin (e.g. http://localhost:5000/api)
-npm install
-npm run dev
-```
-
-App runs at `http://localhost:5173`. Vite proxy forwards `/api` to the backend when `VITE_API_URL` is not set.
-
-### Production
-
-- **Backend:** `NODE_ENV=production`, set `MONGODB_URI`, strong `JWT_SECRET`, `CLIENT_URL` to your frontend origin.
-- **Frontend:** Set `VITE_API_URL` to your backend API URL, then `npm run build`. Serve the `dist/` folder (e.g. Nginx, Vercel).
-
-## API Overview
-
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|--------------|
-| POST   | /api/auth/register | No  | Register (name, email, password, role) |
-| POST   | /api/auth/login    | No  | Login (email, password) |
-| GET    | /api/auth/me       | Yes | Current user |
-| GET    | /api/products      | Yes | List products (query: stage, search, page, limit) |
-| GET    | /api/products/stages | No | Lifecycle stages list |
-| GET    | /api/products/:id | Yes | Product by ID |
-| POST   | /api/products     | Yes | Create (Admin/Developer) |
-| PUT    | /api/products/:id | Yes | Update (Admin/Developer) |
-| DELETE | /api/products/:id | Yes | Delete (Admin only) |
-| GET    | /api/activity-logs | Yes | List logs (Admin, query: page, limit) |
-| GET    | /api/activity-logs/entity/:id | Yes | Logs for one product |
-
-## Roles
-
-- **Admin:** Full access; delete products; view all activity logs.
-- **Developer:** Create/update products; view products and own activity.
-- **Tester:** View products only.
-
-## License
-
-MIT
+🛠 Technology Stack
+Frontend
+React.js
+Vite
+React Router DOM
+Axios
+CSS
+Backend
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT Authentication
+bcrypt.js
+Database
+MongoDB Atlas
+Deployment
+Frontend: Render
+Backend: Render
