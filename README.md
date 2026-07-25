@@ -5,8 +5,6 @@ A modern, full-stack **MERN (MongoDB, Express.js, React, Node.js)** application 
 🌐 **Live Demo:**  
 https://product-lifecycle-management-frontend.onrender.com
 
-🔗 **Backend API:**  
-https://product-lifecycle-management.onrender.com
 
 ---
 
